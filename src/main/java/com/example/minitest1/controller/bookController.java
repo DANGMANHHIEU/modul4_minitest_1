@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.util.List;
 
 @Controller
-@RequestMapping(value = "/book",  produces = "text/html;charset=UTF-8")
+@RequestMapping(value = "/book", produces = "text/html;charset=UTF-8")
 public class bookController {
     private final IBookService bookService = new BookService();
 
