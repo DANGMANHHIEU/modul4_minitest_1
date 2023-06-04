@@ -1,6 +1,7 @@
 package com.example.minitest1.model;
 
 public class Book {
+
     private int id;
     private String bookName;
     private String bookTitle;
