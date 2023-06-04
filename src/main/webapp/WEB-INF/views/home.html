@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+  <meta charset="UTF-8">
+  <title>Trang chủ</title>
+</head>
+<body>
+<h3>Sách</h3>
+<p>
+  <a th:href="@{/book/create}">
+    Thêm mới
+  </a>
+</p>
+<div class="notify">
+  <div th:if="${success}">
+    <span th:text="${success}"></span>
+  </div>
+</div>
+<table id = "customers">
+  <thead>
+  <tr>
+    <th>STT</th>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Ngày tạo</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    <th>View</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="row, rowStat : ${bookList}">
+    <td th:text="${row.getId()}"></td>
+    <td th:text="${row.getBookName()}"></td>
+    <td th:text="${row.getBookTitle()}"></td>
+    <td th:text="${row.getCreated_date()}"></td>
+    <td><a th:href="@{/book/{id}/edit(id=${row.getId()})}">Sửa</a></td>
+    <td><a th:href="@{/book/{id}/delete(id=${row.getId()})}">Xóa</a></td>
+    <td><a th:href="@{/book/{id}/view(id=${row.getId()})}">Đọc truyện</a></td>
+  </tr>
+  </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

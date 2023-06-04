@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head th:replace="/layout :: head">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Thêm mới</h3>
+<p >
+    <a th:href="@{/book}">Trở lại</a>
+</p>
+<div id="form">
+    <form th:action="@{/book/save}" th:object="${book}"
+          method="POST" >
+        <table>
+            <tr>
+                <td>Mã sách</td>
+                <td><input type="text" th:field="*{id}"/></td>
+            </tr>
+            <tr>
+                <td>Tên sách</td>
+                <td><input type="text" th:field="*{bookName}"/></td>
+            </tr>
+            <tr>
+                <td>Tiêu đề</td>
+                <td><input type="text" th:field="*{bookTitle}"/></td>
+            </tr>
+            <tr>
+                <td>Nội dung</td>
+                <td><input type="text" th:field="*{bookContent}"/></td>
+            </tr>
+            <tr>
+                <td>Ngày tạo</td>
+                <td><input type="text" th:field="*{created_date}"/></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Save"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<footer th:replace="/layout :: footer"></footer>
+
+</body>
+</html>
