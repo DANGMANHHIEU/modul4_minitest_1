@@ -8,6 +8,7 @@ import java.util.List;
 public class BookService implements IBookService{
     private static final List<Book> book;
     static {
+
         book = new ArrayList<>();
         book.add(new Book(1,"Doremon","Truyện hay","Nobita,Xuka,Chaien,Xeko,Doremon","2023"));
         book.add(new Book(2,"Doremon","Truyện hay","Nobita,Xuka,Chaien,Xeko,Doremon","2023"));
