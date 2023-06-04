@@ -20,7 +20,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 public class ApplicationConfig implements WebMvcConfigurer, ApplicationContextAware {
 
 
-    private ApplicationContext applicationContext;
+    private ApplicationContext  applicationContext;
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
